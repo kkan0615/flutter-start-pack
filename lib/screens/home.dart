@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_start_pack/screens/GameDetail.dart';
+import 'package:flutter_start_pack/api/Match.dart';
+import 'package:flutter_start_pack/screens/Details/MatchGameDetail.dart';
+import 'package:flutter_start_pack/widgets/MatchGame.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -9,26 +10,45 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreen extends State<HomeScreen> {
+  final List<MatchGame> _matchGameList = [
+    MatchGame(dateTime: DateTime.now()),
+    MatchGame(dateTime: DateTime.now())
+  ];
+  // List<int> _matchList = [1, 2, 3, 4, 5, 6];
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Home'),
+      ),
       body: Container(
-        child: Center(
           child: Column(
             children: <Widget>[
-              const Text('Home screen'),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => GameDetailScreen()),
-                    );
-                  },
-                  child: const Text('Go back to home')
-              )
+              Text(
+                'Home screen',
+                style: Theme.of(context).textTheme.headline5,
+              ),
+              // ElevatedButton(
+              //     onPressed: () {
+              //       Navigator.push(
+              //         context,
+              //         MaterialPageRoute(builder: (context) => GameDetailScreen()),
+              //       );
+              //     },
+              //     child: const Text('Go back to home')
+              // )
+              // ListView(
+              //   padding: const EdgeInsets.all(8),
+                for (var _matchGame in _matchGameList) MatchWidget(matchGame: _matchGame)
+              // )
             ],
           )
-        ),
       ),
     );
   }

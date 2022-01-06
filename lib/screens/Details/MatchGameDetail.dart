@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class GameDetailScreen extends StatefulWidget {
+  const GameDetailScreen({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _GameDetailScreen();
 
