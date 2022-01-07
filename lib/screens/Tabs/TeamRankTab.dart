@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TeamRankTab extends StatefulWidget {
+  const TeamRankTab({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _TeamRankTab();
 
@@ -10,10 +11,10 @@ class TeamRankTab extends StatefulWidget {
 class _TeamRankTab extends State<TeamRankTab> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      body: Container(
         child: Text('Team Tab')
-        ),
+      ),
     );
   }
 }

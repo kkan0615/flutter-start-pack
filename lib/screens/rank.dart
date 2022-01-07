@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_start_pack/screens/PlayerRankTab.dart';
-import 'package:flutter_start_pack/screens/TeamRankTab.dart';
+import 'package:flutter_start_pack/screens/Tabs/PlayerRankTab.dart';
+import 'package:flutter_start_pack/screens/Tabs/TeamRankTab.dart';
 
 class RankScreen extends StatefulWidget {
   @override
@@ -15,18 +15,19 @@ class _RankScreen extends State<RankScreen> {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
+            toolbarHeight: 50,
             bottom: const TabBar(
               tabs: [
                 Tab(text: 'Team'),
                 Tab(text: 'Player'),
               ],
             ),
-            title: Text('Home'),
+            title: const Text('Rank'),
           ),
-          body: TabBarView(
+          body: const TabBarView(
             children: [
               TeamRankTab(),
-              const PlayerRankTab(),
+              PlayerRankTab(),
             ],
           ),
         )

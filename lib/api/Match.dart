@@ -1,14 +1,13 @@
-import 'package:flutter/material.dart';
+import 'Team.dart';
 
-
-class MatchGame {
-  // String title;
+class GameSchedule {
+  Team home;
+  Team away;
   DateTime dateTime;
 
-  MatchGame({
+  GameSchedule({
+    required this.home,
+    required this.away,
     required this.dateTime,
   });
-  // MatchGame({
-  //   required this.title,
-  // });
 }
