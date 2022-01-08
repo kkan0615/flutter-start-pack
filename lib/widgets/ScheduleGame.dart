@@ -36,7 +36,8 @@ class _GameScheduleWidget extends State<GameScheduleWidget> {
         padding: const EdgeInsets.all(5),
         child: Row(
             children: <Widget>[
-              Expanded(
+              SizedBox(
+                width: 40,
                 child: Text(
                   formattedDate,
                   style: const TextStyle(
@@ -45,7 +46,6 @@ class _GameScheduleWidget extends State<GameScheduleWidget> {
                 )
               ),
               Expanded(
-                flex: 5,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -110,7 +110,8 @@ class _GameScheduleWidget extends State<GameScheduleWidget> {
                   ],
                 ),
               ),
-              Expanded(
+              SizedBox(
+                width: 55,
                 child: TextButton(
                   onPressed: _onPressDetailBtn,
                   child: const Text("Detail"),

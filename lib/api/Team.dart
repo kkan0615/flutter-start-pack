@@ -17,7 +17,7 @@ List<Team> SampleTeamList = [
     abbreviation: 'DK'
   ),
   Team(
-    imgPath: 'https://nng-phinf.pstatic.net/MjAyMTEyMTVfMjU4/MDAxNjM5NTQzNzU5MjA5.FYoYFgPyhwtTBmT5IfcX8aWFPWoMetUMgW2uKZs6VEog.J_z9kSd3Lss08bWRprUaGoZUQxV9oendUt7ekgTj48kg.PNG/OqqFfuySgmTiuoAXlaLg.png?type=f120_120")',
+    imgPath: 'https://nng-phinf.pstatic.net/MjAyMTEyMTVfMjU4/MDAxNjM5NTQzNzU5MjA5.FYoYFgPyhwtTBmT5IfcX8aWFPWoMetUMgW2uKZs6VEog.J_z9kSd3Lss08bWRprUaGoZUQxV9oendUt7ekgTj48kg.PNG/OqqFfuySgmTiuoAXlaLg.png?type=f120_120',
     krName: '농심',
     abbreviation: 'NS'
   ),

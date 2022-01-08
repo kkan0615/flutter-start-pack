@@ -3,6 +3,8 @@ import 'package:flutter_start_pack/screens/Tabs/PlayerRankTab.dart';
 import 'package:flutter_start_pack/screens/Tabs/TeamRankTab.dart';
 
 class RankScreen extends StatefulWidget {
+  const RankScreen({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _RankScreen();
 
