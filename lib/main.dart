@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_start_pack/screens/rank.dart';
 import 'package:flutter_start_pack/screens/home.dart';
-import 'package:flutter_start_pack/widgets/cBottomNavigationBar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +23,8 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.cyan,
+        brightness: Brightness.dark,
+        primarySwatch: Colors.purple,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -44,8 +43,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   int selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
-    RankScreen()
+    const HomeScreen(),
+    const Text('sample 2'),
+    const Text('Setting'),
   ];
 
   void _incrementCounter() {
@@ -70,12 +70,14 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
       // bottomNavigationBar: const CBottomNavigationBar()
       bottomNavigationBar: BottomNavigationBar(
+        iconSize: 20,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
           BottomNavigationBarItem(icon: Icon(Icons.military_tech), title: Text('Rank')),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), title: Text('Setting')),
         ],
         currentIndex: selectedIndex,
         onTap: onItemTapped,
