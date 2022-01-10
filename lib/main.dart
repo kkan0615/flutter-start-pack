@@ -1,5 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_start_pack/screens/home.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const MyApp());
@@ -48,10 +52,15 @@ class _MyHomePageState extends State<MyHomePage> {
     const Text('Setting'),
   ];
 
-  void _incrementCounter() {
+  void _incrementCounter() async {
     setState(() {
       _counter++;
     });
+    LocationPermission permission = await Geolocator.requestPermission();
+    var currentPosition = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
+    log(currentPosition.toString());
+    var res = await http.get(Uri.parse('http://192.168.0.101:3002/current-weathers/coordinates?lat=${currentPosition.latitude}&lon=${currentPosition.longitude}'));
+    log(res.body);
   }
 
   void onItemTapped(int index) {
