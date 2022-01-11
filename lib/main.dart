@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_start_pack/screens/home.dart';
+import 'package:flutter_start_pack/screens/map.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 
@@ -48,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
-    const Text('sample 2'),
+    const MapScreen(),
     const Text('Setting'),
   ];
 
@@ -75,17 +76,17 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: _widgetOptions.elementAt(selectedIndex),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: _incrementCounter,
+      //   tooltip: 'Increment',
+      //   child: const Icon(Icons.add),
+      // ),
       // bottomNavigationBar: const CBottomNavigationBar()
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 20,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
-          BottomNavigationBarItem(icon: Icon(Icons.military_tech), title: Text('Rank')),
+          BottomNavigationBarItem(icon: Icon(Icons.map), title: Text('Map')),
           BottomNavigationBarItem(icon: Icon(Icons.settings), title: Text('Setting')),
         ],
         currentIndex: selectedIndex,
